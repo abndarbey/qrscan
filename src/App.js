@@ -5,7 +5,6 @@ import {
   Route,
   // Link
 } from "react-router-dom";
-import Home from './pages/Home';
 import QRscan from './pages/QRscanner';
 
 function App() {
