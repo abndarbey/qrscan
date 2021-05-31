@@ -20,14 +20,7 @@ function QRscanner() {
     }
     
     return (
-      <div>
-            <Link to="/">
-            <Fab style={{marginRight:10}} color="primary">
-                <ArrowBack/>
-            </Fab>
-            </Link>
-            <span>QR Scanner</span>
-            
+      <div>            
             <center>
             <div style={{marginTop:30}}>
                 <QrScan

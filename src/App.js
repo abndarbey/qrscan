@@ -16,9 +16,6 @@ function App() {
           <div>
             <Switch>
               <Route exact path="/">
-                <Home/>
-              </Route>
-              <Route path="/qr_scanner">
                 <QRscan/>
               </Route>
             </Switch>
