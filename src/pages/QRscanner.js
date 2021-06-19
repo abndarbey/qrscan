@@ -3,14 +3,14 @@ import QrScan from 'react-qr-reader'
 
 function QRscanner() {
 
-    const [qrscan, setQrscan] = useState('No result');
+    const [link, setLink] = useState('No result');
     const handleScan = data => {
         if (data) {
-            setQrscan(data)
+            setLink(data)
         }
     }
-    if(qrscan!=="No result"){ 
-        window.open(qrscan, "_blank");
+    if(link!=="No result"){ 
+        window.open(link, "_blank");
     }
     const handleError = err => {
         console.error(err)
@@ -24,10 +24,11 @@ function QRscanner() {
                     delay={300}
                     onError={handleError}
                     onScan={handleScan}
-                    style={{ height: 240, width: 320 }}
+                    style={{ height: 500, width: 500 }}
                 />
             </div>
             </center>
+            <p>{link}</p>
             {/* <TextareaAutosize
                 
                 style={{fontSize:18, width:320, height:100, marginTop:100}}
