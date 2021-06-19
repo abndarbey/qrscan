@@ -6,6 +6,7 @@ import {
   // Link
 } from "react-router-dom";
 import QRscan from './pages/QRscanner';
+import ScanQR from './pages/Scan';
 
 function App() {
   return (
@@ -16,6 +17,9 @@ function App() {
             <Switch>
               <Route exact path="/">
                 <QRscan/>
+              </Route>
+              <Route exact path="/scan">
+                <ScanQR/>
               </Route>
             </Switch>
           </div>

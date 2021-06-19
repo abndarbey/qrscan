@@ -13,7 +13,7 @@ function QRscanner() {
         window.open(qrscan, "_blank");
     }
     const handleError = err => {
-    console.error(err)
+        console.error(err)
     }
     
     return (
