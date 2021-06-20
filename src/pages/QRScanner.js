@@ -15,7 +15,7 @@ export const Scanner = () => {
     }
     if(link!=="No result"){
         let newLink = link + '?productID=' + productID 
-        window.open(newLink, "_blank");
+        window.open(newLink);
     }
     const handleError = err => {
         console.error(err)
