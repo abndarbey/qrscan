@@ -16,7 +16,7 @@ export const Scanner = () => {
         }
     }
     if(link!=="No result"){
-        window.open(newLink, "_blank");
+        window.open(newLink);
     }
     const handleError = err => {
         console.error(err)
