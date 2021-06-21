@@ -1,24 +1,16 @@
 import React, {useState} from 'react'
 import QrScan from 'react-qr-reader'
 
-export const Scanner = () => {
-    const [link, setLink] = useState('No result')
-    const [showLink, setShowLink] = useState(false)
+function QRscanner() {
 
-    // const queryString = window.location.search
-	// const urlParams = new URLSearchParams(queryString)
-    // const productID = urlParams.get('productID')
-
+    const [link, setLink] = useState('No result');
     const handleScan = data => {
         if (data) {
             setLink(data)
-            // setLink(data + '&productID=' + productID)
-            setShowLink(true)
         }
     }
-
-    if(link !== "No result") {
-        window.location.open(link, "_self")
+    if(link!=="No result"){ 
+        window.open(link, "_self");
     }
     const handleError = err => {
         console.error(err)
@@ -27,19 +19,19 @@ export const Scanner = () => {
     return (
       <div>            
             <center>
-                <div style={{marginTop:30}}>
-                    <QrScan
-                        delay={300}
-                        onError={handleError}
-                        onScan={handleScan}
-                        style={{ height: 400, width: 400 }}
-                    />
-                </div>
-                {showLink? <a href={link}>Open Link</a> : <p>No Result</p>}
+            <div style={{marginTop:30}}>
+                <QrScan
+                    delay={300}
+                    onError={handleError}
+                    onScan={handleScan}
+                    style={{ height: 500, width: 500 }}
+                />
+            </div>
             </center>
+            <p>{link}</p>
       </div>
     );
   }
   
-  export default Scanner;
+  export default QRscanner;
   
