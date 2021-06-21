@@ -12,10 +12,10 @@ export const Scanner = () => {
     const handleScan = data => {
         if (data) {
             setLink(data)
-            setNewLink(link + '&productID=' + productID )
         }
     }
     if(newLink!=="No result"){
+        setNewLink(link + '&productID=' + productID )
         window.open(newLink, "_self");
     }
     const handleError = err => {
