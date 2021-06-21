@@ -14,7 +14,7 @@ export const Scanner = () => {
         }
     }
     if(link!=="No result"){
-        let newLink = link + '?productID=' + productID 
+        let newLink = link + '&productID=' + productID 
         window.open(newLink, "_self");
     }
     const handleError = err => {

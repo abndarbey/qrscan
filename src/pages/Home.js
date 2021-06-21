@@ -14,7 +14,7 @@ function Home() {
 
             <Grid container spacing={6}>
                 <Grid item xs={6}>
-                    <Link to="/qr_scanner">
+                    <Link to="/scan">
                     <Button variant="contained" size="large" color="primary">
                         <Icon 
                         style={{padding:10}}
