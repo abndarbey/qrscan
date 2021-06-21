@@ -10,7 +10,7 @@ function QRscanner() {
         }
     }
     if(link!=="No result"){ 
-        window.open(link, "_blank");
+        window.open(link, "_self");
     }
     const handleError = err => {
         console.error(err)
