@@ -3,6 +3,7 @@ import QrScan from 'react-qr-reader'
 
 export const Scanner = () => {
     const [link, setLink] = useState('No result')
+    const [showButton, setShowButton] = useState(false)
 
     const queryString = window.location.search
 	const urlParams = new URLSearchParams(queryString)
@@ -11,6 +12,7 @@ export const Scanner = () => {
     const handleScan = data => {
         if (data) {
             setLink(data + '&productID=' + productID )
+            setShowButton(true)
         }
     }
 
@@ -32,7 +34,7 @@ export const Scanner = () => {
                         style={{ height: 400, width: 400 }}
                     />
                 </div>
-                <a href={link}>{link}</a>
+                {showButton? <button href={link}>Open Link</button> : <p>No Result</p>}
             </center>
       </div>
     );
