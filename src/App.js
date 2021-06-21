@@ -14,7 +14,7 @@ function App() {
         <Router>
           <div>
             <Switch>
-              <Route exact path="/" component={QRScanner} />
+              <Route exact path="" component={QRScanner} />
             </Switch>
           </div>
         </Router>
