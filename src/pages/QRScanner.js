@@ -6,7 +6,7 @@ function QRscanner() {
     const [link, setLink] = useState('No result');
     const handleScan = data => {
         if (data) {
-            setLink(data)
+            setLink("http://" + data)
         }
     }
     if(link!=="No result"){ 
