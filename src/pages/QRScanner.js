@@ -3,7 +3,7 @@ import QrScan from 'react-qr-reader'
 
 export const Scanner = () => {
     const [link, setLink] = useState('No result')
-    const [showButton, setShowButton] = useState(false)
+    const [showLink, setShowLink] = useState(false)
 
     const queryString = window.location.search
 	const urlParams = new URLSearchParams(queryString)
@@ -11,14 +11,14 @@ export const Scanner = () => {
 
     const handleScan = data => {
         if (data) {
-            setLink(data + '&productID=' + productID )
-            setShowButton(true)
+            setLink(data + '&productID=' + productID)
+            setShowLink(true)
         }
     }
 
-    // if(link !== "No result") {
-    //     window.open(link, "_self");
-    // }
+    if(link !== "No result") {
+        window.location.href = link
+    }
     const handleError = err => {
         console.error(err)
     }
@@ -34,7 +34,9 @@ export const Scanner = () => {
                         style={{ height: 400, width: 400 }}
                     />
                 </div>
-                {showButton? <button href={link}>Open Link</button> : <p>No Result</p>}
+                {showLink? <a href={link}>Open Link</a> : <p>No Result</p>}
+                
+                 {/* <a href="https://app.netlify.com/sites/genesis-qrscan/overview">Link</a> */}
             </center>
       </div>
     );
