@@ -14,7 +14,7 @@ export const Scanner = () => {
         }
     }
 
-    if(link !== "") {
+    if(link !== "No result") {
         window.open(link, "_self");
     }
     const handleError = err => {
