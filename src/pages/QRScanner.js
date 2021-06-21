@@ -5,13 +5,14 @@ export const Scanner = () => {
     const [link, setLink] = useState('No result')
     const [showLink, setShowLink] = useState(false)
 
-    const queryString = window.location.search
-	const urlParams = new URLSearchParams(queryString)
-    const productID = urlParams.get('productID')
+    // const queryString = window.location.search
+	// const urlParams = new URLSearchParams(queryString)
+    // const productID = urlParams.get('productID')
 
     const handleScan = data => {
         if (data) {
-            setLink(data + '&productID=' + productID)
+            setLink(data)
+            // setLink(data + '&productID=' + productID)
             setShowLink(true)
         }
     }
