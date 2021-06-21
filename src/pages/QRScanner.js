@@ -12,9 +12,10 @@ export const Scanner = () => {
         if (data) {
             setLink(data + '&productID=' + productID )
         }
-        if(data !== "") {
-            window.open(link);
-        }
+    }
+
+    if(link !== "") {
+        window.open(link, "_self");
     }
     const handleError = err => {
         console.error(err)
