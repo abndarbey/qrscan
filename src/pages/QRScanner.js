@@ -3,12 +3,18 @@ import QrScan from 'react-qr-reader'
 
 function QRscanner() {
 
-    const [link, setLink] = useState('No result');
+    const [link, setLink] = useState('No result')
+
+    const queryString = window.location.search
+	const urlParams = new URLSearchParams(queryString)
+    const productID = urlParams.get('productID')
+
     const handleScan = data => {
         if (data) {
-            setLink("http://" + data)
+            setLink(data + '&productID=' + productID)
         }
     }
+
     if(link!=="No result"){ 
         window.open(link, "_self");
     }
@@ -27,8 +33,8 @@ function QRscanner() {
                     style={{ height: 500, width: 500 }}
                 />
             </div>
+            <a href={link}>{link}</a>
             </center>
-            <p>{link}</p>
       </div>
     );
   }
