@@ -14,9 +14,9 @@ export const Scanner = () => {
         }
     }
 
-    if(link !== "No result") {
-        window.open(link, "_self");
-    }
+    // if(link !== "No result") {
+    //     window.open(link, "_self");
+    // }
     const handleError = err => {
         console.error(err)
     }
@@ -32,7 +32,7 @@ export const Scanner = () => {
                         style={{ height: 400, width: 400 }}
                     />
                 </div>
-                <p>{link}</p>
+                <a href={link}>{link}</a>
             </center>
       </div>
     );
