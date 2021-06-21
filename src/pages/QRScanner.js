@@ -17,7 +17,7 @@ export const Scanner = () => {
     }
 
     if(link !== "No result") {
-        window.location.href = link
+        window.location.open(link)
     }
     const handleError = err => {
         console.error(err)
@@ -35,8 +35,6 @@ export const Scanner = () => {
                     />
                 </div>
                 {showLink? <a href={link}>Open Link</a> : <p>No Result</p>}
-                
-                 {/* <a href="https://app.netlify.com/sites/genesis-qrscan/overview">Link</a> */}
             </center>
       </div>
     );
