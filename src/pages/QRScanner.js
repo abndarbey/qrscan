@@ -7,7 +7,7 @@ import Loader from "react-loader-spinner"
 function QRscanner() {
 
     const [link, setLink] = useState('Scanning...')
-    const [sacanner, setScanner] = useState(true)
+    const [scanner, setScanner] = useState(false)
 
     const queryString = window.location.search
 	const urlParams = new URLSearchParams(queryString)
@@ -50,17 +50,17 @@ function QRscanner() {
                 </div>
                 
                 <div style={{zIndex:9, width:"100%",height: "100%",position: "absolute",top:400,left: 0,opacity: 0.8}}>
-                    {!sacanner? 
+                    {!scanner? 
                 <div>   
                     <Loader type="Puff" color="rgb(255, 255, 255)" height={80} width={80} />
                     <a href={link} style={{color: '#FFF',textDecoration: 'none'}}>{link}</a>
                 </div>
                 :
                 <ProfileUi 
-                    imgUrl='https://genesis.flatworldinfotech.com/api/files/?id=fffae589-db9f-4aea-b6ac-d20c6e84caac'
-                    name='Wine' 
-                    designation='BlockChain Closed' 
-                    height={70} width={70}
+                        imgUrl='https://genesis.flatworldinfotech.com/api/files/?id=fffae589-db9f-4aea-b6ac-d20c6e84caac'
+                        name='Wine' 
+                        designation='BlockChain Closed' 
+                        height={70} width={70}
                     />}
                 </div>
             </center>
